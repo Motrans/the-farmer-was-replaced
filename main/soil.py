@@ -6,14 +6,5 @@ for i in range(get_world_size()):
 			harvest()
 		if get_ground_type()==Grounds.Grassland:
 			till()
-		plant(Entities.Carrot)
-		move(North)
-	move(East)
-while True:
-	for i in range(get_world_size()):
-		while can_harvest()==False:
-			continue
-		harvest()
-		plant(Entities.Carrot)
 		move(North)
 	move(East)

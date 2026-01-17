@@ -6,4 +6,3 @@ for i in range(get_world_size()):
 			harvest()
 		move(North)
 	move(East)
-clear()
