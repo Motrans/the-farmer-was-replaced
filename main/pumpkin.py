@@ -1,4 +1,6 @@
 def single(size=5):
+	x=get_pos_x()
+	y=get_pos_y()
 	move(South)
 	for i in range(size):
 		for j in range(size):
@@ -13,15 +15,10 @@ def single(size=5):
 				plant(Entities.Pumpkin)
 				move(South)
 		move(East)
-	move(West)
-	if size%2==0:
-		move(North)
-		for i in range(size-1):
-			move(West)
-	else:
-		for i in range(size-1):
-			move(South)
-			move(West)
+	while get_pos_x()!=x:
+		move(West)
+	while get_pos_y()!=y:
+		move(South)
 	# 查找坏南瓜
 	k=1
 	while k>0:
@@ -42,13 +39,13 @@ def single(size=5):
 							plant(Entities.Pumpkin)
 					move(South)
 			move(East)
-		move(West)
-		if size%2==0:
-			move(North)
-			for i in range(size-1):
-				move(West)
-		else:
-			for i in range(size-1):
-				move(South)
-				move(West)
+		while get_pos_x()!=x:
+			move(West)
+		while get_pos_y()!=y:
+			move(South)
 		k-=1
+
+
+while __name__=="__main__":
+	single(3)
+	harvest()
